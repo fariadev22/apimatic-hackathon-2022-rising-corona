@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiseaseShAPI.Standard", "DiseaseShAPI.Standard/DiseaseShAPI.Standard.csproj", "{7ae33ac1-ea42-41f7-b2d5-10d02bd57a2f}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiseaseShAPI.Tests", "DiseaseShAPI.Tests/DiseaseShAPI.Tests.csproj", "{ffb53e36-2735-4b81-afc3-48b3e162a3d9}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {7ae33ac1-ea42-41f7-b2d5-10d02bd57a2f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {7ae33ac1-ea42-41f7-b2d5-10d02bd57a2f}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {7ae33ac1-ea42-41f7-b2d5-10d02bd57a2f}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {7ae33ac1-ea42-41f7-b2d5-10d02bd57a2f}.Release|Any CPU.Build.0 = Release|Any CPU
+        {ffb53e36-2735-4b81-afc3-48b3e162a3d9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {ffb53e36-2735-4b81-afc3-48b3e162a3d9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {ffb53e36-2735-4b81-afc3-48b3e162a3d9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {ffb53e36-2735-4b81-afc3-48b3e162a3d9}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+EndGlobal

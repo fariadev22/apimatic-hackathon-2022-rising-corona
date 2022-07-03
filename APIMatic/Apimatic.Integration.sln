@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apimatic.Integration", "Apimatic.Integration\Apimatic.Integration.csproj", "{01077503-EF6B-4A95-85DD-5DD164395783}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApimaticAPI.Standard", "Api\ApimaticAPI.Standard\ApimaticAPI.Standard.csproj", "{435639C2-74B9-43E7-ADB2-8703CF6DB661}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01077503-EF6B-4A95-85DD-5DD164395783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01077503-EF6B-4A95-85DD-5DD164395783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01077503-EF6B-4A95-85DD-5DD164395783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01077503-EF6B-4A95-85DD-5DD164395783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435639C2-74B9-43E7-ADB2-8703CF6DB661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435639C2-74B9-43E7-ADB2-8703CF6DB661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435639C2-74B9-43E7-ADB2-8703CF6DB661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435639C2-74B9-43E7-ADB2-8703CF6DB661}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {211B31AC-AB2E-4329-8E28-5171F30B515C}
+	EndGlobalSection
+EndGlobal

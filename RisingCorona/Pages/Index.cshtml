@@ -1,0 +1,97 @@
+﻿@page
+@using RisingCorona.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@{
+    var risingCoronaCountries =
+        new ApiClient().GetRisingCoronaCountries() 
+        ?? new List<RisingCoronaCountry>();
+}
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages':['geochart', 'table']
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+        
+        function drawRegionsMap() {
+            var graphData = [];
+            @{
+                @:graphData.push(['Country', '% Increase in Corona Cases']);
+
+                foreach (var risingCoronaCountry in risingCoronaCountries)
+                {
+                    @:graphData.push(['@risingCoronaCountry.CountryName',
+                    @:{v: @risingCoronaCountry.PercentageIncrease,
+                    @:f: '@risingCoronaCountry.PercentageIncrease%'}]);
+                }
+            }
+            console.log(graphData);
+            var data = google.visualization.arrayToDataTable(
+                graphData
+            );
+
+            var options = {
+                colorAxis: { colors: ['#d2e9c3', '#5CF35C'] }
+            };
+
+            var chart = new google.visualization.GeoChart(
+                document.getElementById('regions_div'));
+
+            chart.draw(data, options);
+        }
+
+        google.charts.setOnLoadCallback(drawTable);
+        function drawTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Country');
+            data.addColumn('number', 'Total Corona Cases (Day Before Yesterday)');
+            data.addColumn('number', 'Total Corona Cases (Yesterday)');
+            data.addColumn('number', 'Total Corona Cases (Today)');
+            data.addColumn('string', 'Percentage Increase %');
+
+            var tableData = [];
+            @{
+                foreach (var risingCoronaCountry in risingCoronaCountries)
+                {
+                    @:tableData.push(['@risingCoronaCountry.CountryName',
+                    @:@risingCoronaCountry.DayBeforeYesterdayCases,
+                    @:@risingCoronaCountry.YesterdayCases,
+                    @:@risingCoronaCountry.TodayCases,
+                    @:"@risingCoronaCountry.PercentageIncrease%"]);
+                }
+            }
+
+            data.addRows(tableData);
+
+            var table = new google.visualization.Table(
+                document.getElementById('table_div'));
+
+            table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        }
+    </script>
+</head>
+<h2 style="text-align: center;">
+    In which countries has Corona been rising since the last 3 days?
+    <img src="/corona_dance.gif" width="40px" />
+</h2>
+<div class="text-center" id="regions_div" style="width: 900px; height: 500px; margin: 0 auto"></div>
+<br/>
+<br />
+@if (risingCoronaCountries.Count <= 0)
+{
+    <p>No rising corona cases found in any country.</p>
+}
+else
+{
+    <p>Corona has been rising in the following countries. 
+        Avoid traveling to them or take necessary precautions 
+        if you are currently visiting:</p>
+}
+
+<div id="table_div"></div>
