@@ -61,7 +61,8 @@
               "Nullable": false,
               "IsArray": false,
               "IsMap": false,
-              "IsArrayOfMap": false
+              "IsArrayOfMap": false,
+              "Example": "{\"updated\":1656840242476,\"cases\":554128007,\"todayCases\":136969,\"deaths\":6361007,\"todayDeaths\":248,\"recovered\":528892222,\"todayRecovered\":233011,\"active\":18874778,\"critical\":37000,\"casesPerOneMillion\":71089,\"deathsPerOneMillion\":816.1,\"tests\":6476303759,\"testsPerOneMillion\":816073.84,\"population\":7935928660,\"oneCasePerPeople\":0,\"oneDeathPerPeople\":0,\"oneTestPerPeople\":0,\"activePerOneMillion\":2378.4,\"recoveredPerOneMillion\":66645.28,\"criticalPerOneMillion\":4.66,\"affectedCountries\":230}"
             }
           }
         }
@@ -89,7 +90,8 @@
         "Deprecated": false,
         "Name": "response",
         "Description": "Status OK",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "Example": "{\"updated\":1656840242476,\"cases\":554128007,\"todayCases\":136969,\"deaths\":6361007,\"todayDeaths\":248,\"recovered\":528892222,\"todayRecovered\":233011,\"active\":18874778,\"critical\":37000,\"casesPerOneMillion\":71089,\"deathsPerOneMillion\":816.1,\"tests\":6476303759,\"testsPerOneMillion\":816073.84,\"population\":7935928660,\"oneCasePerPeople\":0,\"oneDeathPerPeople\":0,\"oneTestPerPeople\":0,\"activePerOneMillion\":2378.4,\"recoveredPerOneMillion\":66645.28,\"criticalPerOneMillion\":4.66,\"affectedCountries\":230}"
       },
       "ResponseCode": 200,
       "ResponseHeaders": [
@@ -257,7 +259,8 @@
               "Nullable": false,
               "IsArray": false,
               "IsMap": false,
-              "IsArrayOfMap": false
+              "IsArrayOfMap": false,
+              "Example": "{\"updated\":1656833417473,\"country\":\"Pakistan\",\"countryInfo\":{\"_id\":586,\"iso2\":\"PK\",\"iso3\":\"PAK\",\"lat\":30,\"long\":70,\"flag\":\"https:\/\/disease.sh\/assets\/img\/flags\/pk.png\"},\"cases\":1537947,\"todayCases\":650,\"deaths\":30401,\"todayDeaths\":2,\"recovered\":1499641,\"todayRecovered\":0,\"active\":7905,\"critical\":138,\"casesPerOneMillion\":6703,\"deathsPerOneMillion\":132,\"tests\":29045736,\"testsPerOneMillion\":126586,\"population\":229453967,\"continent\":\"Asia\",\"oneCasePerPeople\":149,\"oneDeathPerPeople\":7548,\"oneTestPerPeople\":8,\"activePerOneMillion\":34.45,\"recoveredPerOneMillion\":6535.69,\"criticalPerOneMillion\":0.6}"
             }
           }
         }
@@ -285,7 +288,8 @@
         "Deprecated": false,
         "Name": "response",
         "Description": "Status OK",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "Example": "{\"updated\":1656833417473,\"country\":\"Pakistan\",\"countryInfo\":{\"_id\":586,\"iso2\":\"PK\",\"iso3\":\"PAK\",\"lat\":30,\"long\":70,\"flag\":\"https:\/\/disease.sh\/assets\/img\/flags\/pk.png\"},\"cases\":1537947,\"todayCases\":650,\"deaths\":30401,\"todayDeaths\":2,\"recovered\":1499641,\"todayRecovered\":0,\"active\":7905,\"critical\":138,\"casesPerOneMillion\":6703,\"deathsPerOneMillion\":132,\"tests\":29045736,\"testsPerOneMillion\":126586,\"population\":229453967,\"continent\":\"Asia\",\"oneCasePerPeople\":149,\"oneDeathPerPeople\":7548,\"oneTestPerPeople\":8,\"activePerOneMillion\":34.45,\"recoveredPerOneMillion\":6535.69,\"criticalPerOneMillion\":0.6}"
       },
       "ResponseCode": 200,
       "ResponseHeaders": [
@@ -510,7 +514,8 @@
               "Nullable": false,
               "IsArray": true,
               "IsMap": false,
-              "IsArrayOfMap": false
+              "IsArrayOfMap": false,
+              "Example": "[{\"updated\":1656833417473,\"country\":\"Pakistan\",\"countryInfo\":{\"_id\":586,\"iso2\":\"PK\",\"iso3\":\"PAK\",\"lat\":30,\"long\":70,\"flag\":\"https:\/\/disease.sh\/assets\/img\/flags\/pk.png\"},\"cases\":1537947,\"todayCases\":650,\"deaths\":30401,\"todayDeaths\":2,\"recovered\":1499641,\"todayRecovered\":0,\"active\":7905,\"critical\":138,\"casesPerOneMillion\":6703,\"deathsPerOneMillion\":132,\"tests\":29045736,\"testsPerOneMillion\":126586,\"population\":229453967,\"continent\":\"Asia\",\"oneCasePerPeople\":149,\"oneDeathPerPeople\":7548,\"oneTestPerPeople\":8,\"activePerOneMillion\":34.45,\"recoveredPerOneMillion\":6535.69,\"criticalPerOneMillion\":0.6},{\"updated\":1656833418183,\"country\":\"China\",\"countryInfo\":{\"_id\":156,\"iso2\":\"CN\",\"iso3\":\"CHN\",\"lat\":35,\"long\":105,\"flag\":\"https:\/\/disease.sh\/assets\/img\/flags\/cn.png\"},\"cases\":225851,\"todayCases\":104,\"deaths\":5226,\"todayDeaths\":0,\"recovered\":220115,\"todayRecovered\":40,\"active\":510,\"critical\":0,\"casesPerOneMillion\":157,\"deathsPerOneMillion\":4,\"tests\":160000000,\"testsPerOneMillion\":111163,\"population\":1439323776,\"continent\":\"Asia\",\"oneCasePerPeople\":6373,\"oneDeathPerPeople\":275416,\"oneTestPerPeople\":9,\"activePerOneMillion\":0.35,\"recoveredPerOneMillion\":152.93,\"criticalPerOneMillion\":0}]"
             }
           }
         }
@@ -538,7 +543,8 @@
         "Deprecated": false,
         "Name": "response",
         "Description": "Status OK",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "Example": "[{\"updated\":1656833417473,\"country\":\"Pakistan\",\"countryInfo\":{\"_id\":586,\"iso2\":\"PK\",\"iso3\":\"PAK\",\"lat\":30,\"long\":70,\"flag\":\"https:\/\/disease.sh\/assets\/img\/flags\/pk.png\"},\"cases\":1537947,\"todayCases\":650,\"deaths\":30401,\"todayDeaths\":2,\"recovered\":1499641,\"todayRecovered\":0,\"active\":7905,\"critical\":138,\"casesPerOneMillion\":6703,\"deathsPerOneMillion\":132,\"tests\":29045736,\"testsPerOneMillion\":126586,\"population\":229453967,\"continent\":\"Asia\",\"oneCasePerPeople\":149,\"oneDeathPerPeople\":7548,\"oneTestPerPeople\":8,\"activePerOneMillion\":34.45,\"recoveredPerOneMillion\":6535.69,\"criticalPerOneMillion\":0.6},{\"updated\":1656833418183,\"country\":\"China\",\"countryInfo\":{\"_id\":156,\"iso2\":\"CN\",\"iso3\":\"CHN\",\"lat\":35,\"long\":105,\"flag\":\"https:\/\/disease.sh\/assets\/img\/flags\/cn.png\"},\"cases\":225851,\"todayCases\":104,\"deaths\":5226,\"todayDeaths\":0,\"recovered\":220115,\"todayRecovered\":40,\"active\":510,\"critical\":0,\"casesPerOneMillion\":157,\"deathsPerOneMillion\":4,\"tests\":160000000,\"testsPerOneMillion\":111163,\"population\":1439323776,\"continent\":\"Asia\",\"oneCasePerPeople\":6373,\"oneDeathPerPeople\":275416,\"oneTestPerPeople\":9,\"activePerOneMillion\":0.35,\"recoveredPerOneMillion\":152.93,\"criticalPerOneMillion\":0}]"
       },
       "ResponseCode": 200,
       "ResponseHeaders": [
