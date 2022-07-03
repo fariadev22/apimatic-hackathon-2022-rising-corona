@@ -19,3 +19,7 @@ jobs:
       run: dotnet build APIMatic/Apimatic.Integration.sln
     - name: Run Script to Update New Spec to APIMatic
       run: dotnet run --project APIMatic/Apimatic.Integration/Apimatic.Integration.csproj -- ${{ secrets.APIMATICUSERNAME }} ${{ secrets.APIMATICPASSWORD }} ${{ secrets.APIENTITYID }} ${{ secrets.APIINTEGRATIONKEY }}
+    - name: Build New SDK
+      run: dotnet build Api/DiseaseShAPI.sln
+    - name: Run New SDK Tests
+      run: dotnet test Api/DiseaseShAPI.Tests/DiseaseShAPI.Tests.csproj --logger "console;verbosity=normal" --no-restore
