@@ -63,7 +63,7 @@ namespace Apimatic.Integration
             }
             catch
             {
-                Console.WriteLine(
+                throw new ArgumentException(
                     "Could not update the spec in APIMatic Dashboard successfully.");
             }
         }
@@ -127,7 +127,7 @@ namespace Apimatic.Integration
             }
             catch
             {
-                Console.WriteLine(
+                throw new ArgumentException(
                     "Could not update the SDK successfully.");
             }
         }
@@ -147,8 +147,9 @@ namespace Apimatic.Integration
             }
             catch
             {
-                Console.WriteLine("Unable to publish portal as the " +
-                                  "APIMatic API's publishing endpoint is broken.");
+                throw new ArgumentException(
+                    "Unable to publish portal as the " +
+                    "APIMatic API's publishing endpoint is broken.");
             }
         }
     }
