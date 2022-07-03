@@ -1,0 +1,21 @@
+name: Generate New SDK and Publish Portal for New Spec
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 3.1.x
+    - name: Build Integration Project
+      run: dotnet build APIMatic/Apimatic.Integration.sln
+    - name: Run Script to Update New Spec to APIMatic
+      run: dotnet run --project APIMatic/Apimatic.Integration/Apimatic.Integration.csproj -- ${{ secrets.APIMATICUSERNAME }} ${{ secrets.APIMATICPASSWORD }} ${{ secrets.APIENTITYID }} ${{ secrets.APIINTEGRATIONKEY }}
