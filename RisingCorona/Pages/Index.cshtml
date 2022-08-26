@@ -18,7 +18,7 @@
             'packages':['geochart', 'table']
         });
         google.charts.setOnLoadCallback(drawRegionsMap);
-        
+
         function drawRegionsMap() {
             var graphData = [];
             @{
@@ -53,7 +53,7 @@
             data.addColumn('number', 'Total Corona Cases (Day Before Yesterday)');
             data.addColumn('number', 'Total Corona Cases (Yesterday)');
             data.addColumn('number', 'Total Corona Cases (Today)');
-            data.addColumn('string', 'Percentage Increase %');
+            data.addColumn('number', 'Percentage Increase %');
 
             var tableData = [];
             @{
@@ -63,7 +63,8 @@
                     @:@risingCoronaCountry.DayBeforeYesterdayCases,
                     @:@risingCoronaCountry.YesterdayCases,
                     @:@risingCoronaCountry.TodayCases,
-                    @:"@risingCoronaCountry.PercentageIncrease%"]);
+                    @:{v: @risingCoronaCountry.PercentageIncrease,
+                    @:f: '@risingCoronaCountry.PercentageIncrease%'}]);
                 }
             }
 
