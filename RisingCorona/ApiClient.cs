@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DiseaseShAPI.Standard.Controllers;
+using DiseaseShAPI.Standard.Models;
 using RisingCorona.Models;
 
 namespace RisingCorona
@@ -32,10 +33,11 @@ namespace RisingCorona
                 "Norway", "Oman", "Pakistan", "Palau", "Panama", "Paraguay", "Peru", "Philippines",
                 "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "Senegal",
                 "Serbia", "Seychelles", "Singapore", "Slovakia", "Slovenia", "Somalia", "Spain",
-                "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Tajikistan", "Tanzania",
+                "Sudan", "Suriname", "Sweden", "Switzerland", "Tajikistan", "Tanzania",
                 "Thailand", "Togo", "Tonga", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu",
-                "Uganda", "Ukraine", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela",
-                "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+                "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", 
+                "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", 
+                "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
             };
 
             DiseaseShAPI.Standard.DiseaseShAPIClient client =
@@ -56,13 +58,25 @@ namespace RisingCorona
                 cOVID19WorldometersController.COVID19TotalsForASetOfCountries(
                     countriesListString, twoDaysAgo: "true");
 
-            List<RisingCoronaCountry> risingCoronaCountries = new List<RisingCoronaCountry>();
+            return CalculateRisingTrendsForCountries(
+                countriesDataToday, 
+                countriesDataYesterday, 
+                countriesDataDayBeforeYesterday);
+        }
+
+        private static List<RisingCoronaCountry> CalculateRisingTrendsForCountries(
+            List<CovidCountry> countriesDataToday, 
+            List<CovidCountry> countriesDataYesterday,
+            List<CovidCountry> countriesDataDayBeforeYesterday)
+        {
+            List<RisingCoronaCountry> risingCoronaCountries = 
+                new List<RisingCoronaCountry>();
 
             if (countriesDataToday != null &&
-               countriesDataYesterday != null &&
-               countriesDataDayBeforeYesterday != null &&
-               countriesDataToday.Count == countriesDataYesterday.Count &&
-               countriesDataYesterday.Count == countriesDataDayBeforeYesterday.Count)
+                countriesDataYesterday != null &&
+                countriesDataDayBeforeYesterday != null &&
+                countriesDataToday.Count == countriesDataYesterday.Count &&
+                countriesDataYesterday.Count == countriesDataDayBeforeYesterday.Count)
             {
                 for (int index = 0; index < countriesDataToday.Count; index++)
                 {
@@ -80,17 +94,19 @@ namespace RisingCorona
                         double dayBeforeYesterdayCases =
                             countryDataDayBeforeYesterday.TodayCases ?? 0;
                         double percentageIncreaseForYesterdayDayBeforeYesterday =
-                            dayBeforeYesterdayCases == 0 ? 0 :
-                            (
-                                (yesterdayCases - dayBeforeYesterdayCases) / 
-                                dayBeforeYesterdayCases
-                            ) * 100;
+                            dayBeforeYesterdayCases == 0
+                                ? 0
+                                : (
+                                    (yesterdayCases - dayBeforeYesterdayCases) /
+                                    dayBeforeYesterdayCases
+                                ) * 100;
                         double percentageIncreaseForTodayYesterday =
-                            yesterdayCases == 0 ? 0 :
-                            (
-                                (todayCases - yesterdayCases) /
-                                yesterdayCases
-                            ) * 100;
+                            yesterdayCases == 0
+                                ? 0
+                                : (
+                                    (todayCases - yesterdayCases) /
+                                    yesterdayCases
+                                ) * 100;
                         double percentageScoreAverage =
                             Math.Round(
                                 (percentageIncreaseForTodayYesterday +
@@ -107,7 +123,6 @@ namespace RisingCorona
                                 PercentageIncrease = percentageScoreAverage
                             });
                         }
-                        
                     }
                 }
             }
